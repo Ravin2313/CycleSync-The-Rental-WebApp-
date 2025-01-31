@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wheels Pricing</title>
+    <link rel="stylesheet" href="/css/pricing.css" />
+  </head>
+  <body class="bg-dark">
+    <h2 class="Pricing-head-title">Pricing Details Of Wheels</h2>
+    <div class="container my-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% allWheels.forEach(Wheel => { %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="<%= Wheel.image %>"
+              class="card-img-top"
+              alt="Bicycle Image"
+              style="height: 225px; width: 100%"
+            />
+            <div class="card-body">
+              <p class="card-text"><%= Wheel.modelName %></p>
+              <p class="card-text">
+                <strong>Price:</strong> &#8377;<%= Wheel.rentPrice %>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-body-secondary">Available</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

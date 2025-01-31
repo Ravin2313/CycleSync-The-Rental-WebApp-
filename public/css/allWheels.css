@@ -1,0 +1,111 @@
+/* Projects Section CSS */
+#Wheels-title {
+  color: aliceblue;
+  text-align: center;
+  margin-top: 7px;
+}
+
+#projects {
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 15px;
+  margin-top: 35px;
+}
+
+h3 {
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+  height: 80%;
+}
+
+.layer {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 15px;
+  transition: height 0.5s;
+}
+
+.layer h2 {
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: aliceblue;
+}
+
+.layer p {
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.layer a {
+  color: #ff004f;
+  margin-top: 20px;
+  background-color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.work:hover img {
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  height: 100%;
+}
+
+.btn-wheels {
+  display: block;
+  margin: 45px auto;
+  border: 1px solid #ff004f;
+  width: fit-content;
+  padding: 14px 50px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.5s;
+}
+
+.btn-wheels:hover {
+  background: #ff004f;
+}
+
+@media (max-width: 600px) {
+  #Wheels-title {
+    margin-top: 0;
+  }
+}

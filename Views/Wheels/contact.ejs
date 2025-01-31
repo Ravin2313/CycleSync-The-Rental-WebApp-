@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CycleSync | Contact US</title>
+    <link rel="stylesheet" href="/css/contact.css" />
+  </head>
+  <body class="bg-dark">
+    <div id="contact" class="my-3" >
+        <div class="container">
+          <div class="row">
+            <div class="contact-left">
+              <h1 class="sub-title">Contact Us !</h1>
+              <p><i class="fa-regular fa-envelope"></i>cyclesync2313@gmail.com</p>
+  
+              <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+              <!-- <a
+                href="/files/Ravindra_Shriwas_Resume.pdf"
+                download
+                class="resumebtn resumebtn2"
+                id="CV"
+                >Download CV</a
+              > -->
+            </div>
+            <div class="contact-right">
+              <form action="/contact-us" method="post">
+                <input type="text" name="Name" placeholder="Your Name" required />
+                <input
+                  type="email"
+                  name="Email"
+                  placeholder="Your Email"
+                  required
+                />
+                <textarea
+                  name="msg"
+                  rows="6"
+                  placeholder="Your message"
+                  required
+                ></textarea>
+                <button type="submit" class="btn sub">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>

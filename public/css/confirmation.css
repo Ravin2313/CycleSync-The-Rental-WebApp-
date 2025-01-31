@@ -1,0 +1,9 @@
+/* Custom CSS to adjust image size */
+.confirmation-image {
+  max-width: 50%; /* Adjust this as needed */
+  height: auto;
+}
+
+.card-header {
+  background-color: #ff004f;
+}

@@ -1,0 +1,60 @@
+const samplePlans = [
+  {
+    planId: "PLAN001",
+    planName: "Basic Plan",
+    duration: "1 Month",
+    price: 200,
+    benefits: ["5 Rides per Day", "Basic Support"],
+    rideLimit: 5,
+    discount: 0,
+  },
+  {
+    planId: "PLAN002",
+    planName: "Standard Plan",
+    duration: "3 Months",
+    price: 500,
+    benefits: ["10 Rides per Day", "Priority Support", "Helmet Included"],
+    rideLimit: 10,
+    discount: 5,
+  },
+  {
+    planId: "PLAN003",
+    planName: "Premium Plan",
+    duration: "6 Months",
+    price: 900,
+    benefits: ["Unlimited Rides", "Priority Support", "Free Accessories"],
+    rideLimit: null,
+    discount: 10,
+  },
+  {
+    planId: "PLAN004",
+    planName: "Family Plan",
+    duration: "1 Year",
+    price: 1500,
+    benefits: [
+      "Unlimited Rides",
+      "24/7 Support",
+      "Multiple Riders",
+      "Free Accessories",
+    ],
+    rideLimit: null,
+    discount: 15,
+  },
+  {
+    planId: "PLAN005",
+    planName: "Corporate Plan",
+    duration: "1 Year",
+    price: 2500,
+    benefits: [
+      "Unlimited Rides",
+      "24/7 Support",
+      "Group Access",
+      "Dedicated Support",
+      "Free Maintenance",
+    ],
+    rideLimit: null,
+    discount: 20,
+  },
+];
+
+module.exports = { data: samplePlans };

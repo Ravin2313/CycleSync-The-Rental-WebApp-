@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CycleSync</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/homewheels.css" />
+  </head>
+  <body class="bg-dark">
+    <!-- Navbar -->
+
+    <!-- Project Cards Section -->
+    <h2 id="Wheels-title">Trending Wheels</h2>
+    <div id="projects">
+      <div class="container">
+        <div class="project-list">
+          <% const availableTrendingWheels = trendingWheel.filter(wheel =>
+          wheel.availabilityStatus === 'Available'); %> <% if
+          (availableTrendingWheels.length > 0) { %> <%
+          availableTrendingWheels.forEach(function(wheel) { %>
+          <!-- Card Template for Each Wheel -->
+          <div class="work">
+            <img src="<%= wheel.image %>" alt="<%= wheel.modelName %>" />
+            <div class="layer">
+              <h2><%= wheel.modelName %></h2>
+              <p><%= wheel.type %> - ₹<%= wheel.rentPrice %>/day</p>
+              <!-- Dynamically generate the link to the wheel details -->
+              <a href="/wheels/<%= wheel._id %>">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <% }); %> <% } else { %>
+          <p>No trending wheels available at the moment.</p>
+          <% } %>
+        </div>
+        <!-- Show More Button -->
+        <a href="/wheels" class="btn-wheels">Show more</a>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

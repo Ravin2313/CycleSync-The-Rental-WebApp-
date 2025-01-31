@@ -1,0 +1,128 @@
+<% layout("/layouts/boilerplate") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= wheel ? wheel.modelName : "Wheel Details" %></title>
+    <link rel="stylesheet" href="/css/show.css" />
+  </head>
+  <body class="show-bg-dark">
+    <div class="show-container">
+      <% if (!wheel) { %>
+      <p>Wheel data is not available. Please try again later.</p>
+      <% } else { %>
+      <header class="show-header">
+        <h1><%= wheel.modelName %></h1>
+      </header>
+      <div class="show-gallery">
+        <div class="show-main-image">
+          <img src="<%= wheel.image %>" alt="<%= wheel.modelName %>" />
+        </div>
+        <div class="show-side-images">
+          <img src="/images/caraousel img1.jpg" alt="Wheel Gallery Image 1" />
+          <img
+            src="/images/PhoneCaraouselPhoto3.jpg"
+            alt="Wheel Gallery Image 2"
+          />
+          <img
+            src="/images/mission statement img2.jpg"
+            alt="Wheel Gallery Image 3"
+          />
+          <img
+            src="/images/PhoneCaraouselPhoto2.jpg"
+            alt="Wheel Gallery Image 4"
+          />
+        </div>
+      </div>
+      <section class="wheel-info">
+        <h2>Details of <%= wheel.modelName %></h2>
+        <div class="basic-info">
+          <p><strong>Type:</strong> <%= wheel.type %></p>
+          <p><strong>Rent Price:</strong> ₹<%= wheel.rentPrice %>/day</p>
+          <p><strong>Availability:</strong> <%= wheel.availabilityStatus %></p>
+          <p><strong>Current Location:</strong> <%= wheel.currentLocation %></p>
+          <p><strong>Condition:</strong> <%= wheel.condition %></p>
+          <p><strong>Accessories Included:</strong> <%= wheel.accessories %></p>
+        </div>
+        <div class="cta">
+          <a href="/wheels/<%= wheel._id %>/rent" class="rent-now-btn">
+            Rent Now
+          </a>
+        </div>
+      </section>
+
+      <!-- Reviews Section -->
+      <div class="reviews-section mb-4">
+        <h3>Customer Reviews</h3>
+        <% if (wheel.reviews.length) { %>
+        <div class="row">
+          <% wheel.reviews.forEach(review => { %>
+          <div class="col-sm-6 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">User</h5>
+                <p class="card-text"><%= review.comment %></p>
+                <p class="text-muted">
+                  Posted on: <%= review.createdAt.toDateString() %>
+                </p>
+                <p class="card-text"><%= review.rating %> Stars</p>
+                <form
+                  action="/wheels/<%= wheel._id %>/reviews/<%= review._id %>?_method=DELETE"
+                  method="post"
+                  class="mb-3"
+                >
+                  <button class="btn btn-sm btn-primary">Delete</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <% } else { %>
+        <p class="text-muted">No reviews yet. Be the first to leave one!</p>
+        <% } %>
+      </div>
+
+      <!-- Review Submission Form -->
+      <% if (currUser) { %>
+      <h4 class="txt-white">Leave a Review</h4>
+      <form
+        action="/wheels/<%= wheel._id %>/reviews"
+        method="POST"
+        novalidate
+        class="needs-validation"
+      >
+        <div class="mb-3 mt-4">
+          <label for="rating" class="form-label txt-white">Rating</label>
+          <input
+            type="number"
+            name="review[rating]"
+            id="rating"
+            min="1"
+            max="5"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label txt-white">Comment</label>
+          <textarea
+            name="review[comment]"
+            id="comment"
+            cols="30"
+            rows="5"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-review-submit">
+            Submit Review
+          </button>
+        </div>
+      </form>
+      <% } %> <% } %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.Pricing-head-title {
+  color: aliceblue;
+  text-align: center;
+  margin-top: 10px;
+  color: aliceblue;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto; /* Adjusts height proportionally */
+  min-height: 200px; /* Set a minimum height */
+  object-fit: cover; /* Ensures the image covers the card without distortion */
+}

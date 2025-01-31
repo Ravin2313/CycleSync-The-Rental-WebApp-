@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Wheel</title>
+  </head>
+  <body>
+    <form method="post" action="/wheels/<%= wheel._id %>?_method=PUT">
+      <h3>Edit the Wheel Details</h3>
+
+      <!-- Cycle ID (Unique, Required) -->
+      <input
+        name="wheel[cycleId]"
+        value="<%= wheel.cycleId %>"
+        type="text"
+        required
+        pattern="^[a-zA-Z0-9]+$"
+        <!--
+        Alphanumeric
+        validation
+        --
+      />
+      <br /><br />
+
+      <!-- Model Name (Required) -->
+      <input
+        name="wheel[modelName]"
+        value="<%= wheel.modelName %>"
+        type="text"
+        required
+      /><br /><br />
+
+      <!-- Cycle Type (Required) -->
+      <input
+        name="wheel[type]"
+        value="<%= wheel.type %>"
+        type="text"
+        required
+      /><br /><br />
+
+      <!-- Rent Price (Required, Must be a number) -->
+      <input
+        name="wheel[rentPrice]"
+        value="<%= wheel.rentPrice %>"
+        type="number"
+        required
+        min="0"
+        title="Rent Price must be a positive number."
+      /><br /><br />
+
+      <!-- Availability Status (Dropdown, Enum) -->
+      <select name="wheel[availabilityStatus]" required>
+        <option value="Available">Available</option>
+        <option value="Rented">Rented</option></select
+      ><br /><br />
+
+      <!-- Current Location (Required) -->
+      <input
+        name="wheel[currentLocation]"
+        value="<%= wheel.currentLocation %>"
+        type="text"
+        required
+      /><br /><br />
+
+      <!-- Image URL (Required, Must be a valid URL) -->
+      <input
+        name="wheel[image]"
+        value="<%= wheel.image %>"
+        type="url"
+        required
+        title="Please enter a valid URL."
+      /><br /><br />
+
+      <!-- Condition (Optional, Defaults to 'Good') -->
+      <input
+        name="wheel[condition]"
+        value="<%= wheel.condition %>"
+        type="text"
+      /><br /><br />
+
+      <!-- Accessories (Optional, Defaults to 'None') -->
+      <input
+        name="wheel[accessories]"
+        value="<%= wheel.accessories %>"
+        type="text"
+      /><br /><br />
+
+      <!-- Added Date (Optional, Defaults to current date) -->
+      <input
+        name="wheel[addedDate]"
+        value="<%= wheel.addedDate %>"
+        type="date"
+      /><br /><br />
+
+      <!-- Usage History (Optional, Must be a positive number) -->
+      <input
+        name="wheel[usageHistory]"
+        value="<%= wheel.usageHistory %>"
+        type="number"
+        min="0"
+        title="Usage history must be a non-negative number."
+      /><br /><br />
+
+      <!-- Submit Button -->
+      <button type="submit">Edit</button>
+    </form>
+  </body>
+</html>

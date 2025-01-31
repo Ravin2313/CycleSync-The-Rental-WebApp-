@@ -1,0 +1,189 @@
+/* Updated styles for Show Page */
+
+.show-bg-dark {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.show-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 30, 30, 1),
+    rgba(20, 20, 20, 0.9)
+  ); /* Gradient for 3D lighting */
+  border-radius: 15px; /* Softer, rounded corners */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
+    /* Dark shadow for depth */ -5px -5px 15px rgba(60, 60, 60, 0.3); /* Light shadow for 3D look */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.show-header {
+  margin-bottom: 20px;
+}
+
+.show-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.show-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+}
+
+.show-main-image img {
+  width: 100%; /* Take full width of container */
+  height: 400px; /* Fixed height for uniformity */
+  object-fit: cover; /* Crop the image proportionally */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.show-side-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.show-side-images img {
+  width: 100%; /* Take full width of container */
+  height: 180px; /* Fixed height for uniformity */
+  object-fit: cover; /* Crop the image proportionally */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#Reviewusername {
+  text-transform: capitalize; /* Capitalizes the first letter of each word */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .show-container {
+    margin: 10px;
+  }
+
+  .show-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .show-main-image img {
+    height: 300px; /* Adjust for smaller screens */
+  }
+
+  .show-side-images img {
+    height: 150px; /* Adjust for smaller screens */
+  }
+}
+
+/* Wheel Information Section */
+.wheel-info {
+  margin-top: 30px;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: left;
+}
+
+/* Section Title */
+.wheel-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 10px;
+  color: white;
+}
+
+/* Basic Information */
+.basic-info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.basic-info strong {
+  color: #ff004f;
+  font-weight: bold;
+}
+
+/* Rent Now Button */
+.cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.rent-now-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #ff004f;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ff004f;
+}
+
+.rent-now-btn:hover {
+  background-color: transparent;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.wheel-reviews p {
+  color: whitesmoke;
+}
+
+.txt-white {
+  color: whitesmoke;
+}
+
+.txt-blue {
+  color: aqua;
+}
+
+.reviews-section h3 {
+  color: whitesmoke;
+}
+/* Styling input fields */
+
+#rating {
+  background-color: transparent;
+}
+
+#comment {
+  background-color: transparent;
+}
+
+#rating:focus {
+  background-color: whitesmoke;
+}
+
+#comment:focus {
+  background-color: whitesmoke;
+}
+
+.btn-review-submit {
+  border: 1px solid #ff004f;
+  background-color: transparent;
+  transition: 0.2s;
+  color: white;
+  margin: 3px auto;
+}
+
+.btn-review-submit:hover {
+  background-color: #ff004f;
+}
+
+

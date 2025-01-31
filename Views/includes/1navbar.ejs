@@ -1,0 +1,97 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark custom-navbar border-bottom"
+  aria-label="Thirteenth navbar example"
+>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarsExample11"
+      aria-controls="navbarsExample11"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse d-lg-flex collapse" id="navbarsExample11">
+      <a class="navbar-brand col-lg-3 me-0" href="/"
+        ><span id="C-letter">C</span>ycle<span id="S-letter">S</span>ync</a
+      >
+      <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/wheels">Explore Wheels</a></li>
+            <li><a class="dropdown-item" href="/wheelPricing">Pricing</a></li>
+            <li><a class="dropdown-item" href="/plans">Membership Plans</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact-us">Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/map">View Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:5000/">Face Auth</a>
+        </li>
+      </ul>
+
+      <div
+        class="d-lg-flex col-lg-3 justify-content-lg-end authentication-btns"
+      >
+        <% if (!currUser) { %>
+        <a href="/login">
+          <button type="button" class="btn mx-2 btn-login">Login</button>
+        </a>
+        <a href="/signup">
+          <button type="button" class="btn btn-signup">Sign Up</button>
+        </a>
+        <% } else { %>
+        <!-- <a href="/logout">
+          <button type="button" class="btn btn-signup">Logout</button>
+        </a> -->
+        &nbsp;&nbsp;
+        <div class="dropdown" id="dropdownMainID">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="/images/man.png"
+              alt=""
+              width="40"
+              height="40"
+              class="rounded-circle me-2 customLogSignImage"
+            />
+            <!-- <strong></strong> -->
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-dark shadow customDropDown me-5"
+          >
+            <li><a class="dropdown-item" href="/dashboard">Profile</a></li>
+            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+          </ul>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

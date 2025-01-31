@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Wheels</title>
+    <link rel="stylesheet" href="/css/allWheels.css" />
+  </head>
+  <body class="bg-dark">
+    <h3>All Wheels</h3>
+
+    <div class="project-list">
+      <% const availableWheels = allWheels.filter(wheel =>
+      wheel.availabilityStatus === 'Available'); %> <% if
+      (availableWheels.length > 0) { %> <%
+      availableWheels.forEach(function(wheel) { %>
+      <div class="work">
+        <img src="<%= wheel.image %>" alt="<%= wheel.modelName %>" />
+        <div class="layer">
+          <h2><%= wheel.modelName %></h2>
+          <p><%= wheel.type %> - ₹<%= wheel.rentPrice %>/day</p>
+          <a href="/wheels/<%= wheel._id %>">
+            <i class="fa-solid fa-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+      <% }); %> <% } else { %>
+      <p>No available wheels at the moment.</p>
+      <% } %>
+    </div>
+  </body>
+</html>

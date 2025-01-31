@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership Plans</title>
+    <link rel="stylesheet" href="/css/membershipPage.css" />
+  </head>
+  <body class="bg-dark">
+    <div class="container my-4">
+      <div class="row">
+        <% membershipPlans.forEach(plan => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">
+                <%= plan.planName %> - <%= plan.duration %>
+              </h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                &#8377;<%= plan.price %><small
+                  class="text-body-secondary fw-light"
+                  >/mo</small
+                >
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <% plan.benefits.forEach(benefit => { %>
+                <li><%= benefit %></li>
+                <% }); %> <% if (plan.rideLimit) { %>
+                <li>Ride Limit: <%= plan.rideLimit %> rides/day</li>
+                <% } %> <% if (plan.discount > 0) { %>
+                <li>Discount: <%= plan.discount %>% off</li>
+                <% } %>
+              </ul>
+              <a href="/signup" class="w-100 btn btn-lg btn-outline-primary">
+                Sign up for <%= plan.planName %>
+              </a>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
